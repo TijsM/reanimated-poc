@@ -2,6 +2,7 @@ import { Button, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
+  withSpring,
 } from "react-native-reanimated";
 
 export function SharedValues() {
@@ -12,10 +13,10 @@ export function SharedValues() {
     return {
       transform: [
         {
-          translateX: offsetX.value * 200,
+          translateX: withSpring(offsetX.value * 200),
         },
         {
-          translateY: offsetY.value * 300,
+          translateY: withSpring(offsetY.value * 300),
         },
       ],
     };
