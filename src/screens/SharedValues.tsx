@@ -1,4 +1,4 @@
-import { Button, StyleSheet } from "react-native";
+import { Button, Dimensions, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -7,8 +7,12 @@ import Animated, {
 } from "react-native-reanimated";
 
 export function SharedValues() {
-  const offsetX = useSharedValue(0);
-  const offsetY = useSharedValue(0);
+  const boxSize = 50;
+  const screenWidth = Dimensions.get("screen").width;
+  const screenHeight = Dimensions.get("screen").height;
+
+  const offsetX = useSharedValue((screenWidth - boxSize) / 2);
+  const offsetY = useSharedValue((screenHeight - boxSize) / 2);
 
   const springOptions: WithSpringConfig = {
     damping: 20, // jumpyness -> lower is more jumpy
@@ -19,10 +23,16 @@ export function SharedValues() {
     return {
       transform: [
         {
-          translateX: withSpring(offsetX.value * 200, springOptions),
+          translateX: withSpring(
+            offsetX.value * screenWidth - boxSize,
+            springOptions
+          ),
         },
         {
-          translateY: withSpring(offsetY.value * 300, springOptions),
+          translateY: withSpring(
+            offsetY.value * screenHeight - boxSize,
+            springOptions
+          ),
         },
       ],
     };
