@@ -21,6 +21,11 @@ export function HomeScreen() {
         //@ts-ignore
         onPress={() => navigation.navigate("Gestures")}
       />
+      <Button
+        title="Bofrost animation"
+        //@ts-ignore
+        onPress={() => navigation.navigate("Bofrost")}
+      />
     </View>
   );
 }

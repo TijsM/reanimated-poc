@@ -6,6 +6,7 @@ import { HomeScreen } from "./src/screens/Home";
 import { SharedValues } from "./src/screens/SharedValues";
 import { AnimationsScreen } from "./src/screens/Animations";
 import { GestureScreen } from "./src/screens/Gestures";
+import { BofrostScreen } from "./src/screens/Bofrost";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ function App() {
         <Stack.Screen name="SharedValues" component={SharedValues} />
         <Stack.Screen name="Animations" component={AnimationsScreen} />
         <Stack.Screen name="Gestures" component={GestureScreen} />
+        <Stack.Screen name="Bofrost" component={BofrostScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
