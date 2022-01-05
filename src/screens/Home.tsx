@@ -7,9 +7,14 @@ export function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Button
-        title="shared animations"
+        title="Shared Values"
         //@ts-ignore
         onPress={() => navigation.navigate("SharedValues")}
+      />
+      <Button
+        title="Animations"
+        //@ts-ignore
+        onPress={() => navigation.navigate("Animations")}
       />
     </View>
   );
