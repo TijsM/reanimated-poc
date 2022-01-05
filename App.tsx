@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomeScreen } from "./src/screens/Home";
 import { SharedValues } from "./src/screens/SharedValues";
 import { AnimationsScreen } from "./src/screens/Animations";
+import { GestureScreen } from "./src/screens/Gestures";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="SharedValues" component={SharedValues} />
         <Stack.Screen name="Animations" component={AnimationsScreen} />
+        <Stack.Screen name="Gestures" component={GestureScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

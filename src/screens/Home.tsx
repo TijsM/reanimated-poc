@@ -16,6 +16,11 @@ export function HomeScreen() {
         //@ts-ignore
         onPress={() => navigation.navigate("Animations")}
       />
+      <Button
+        title="Gestures"
+        //@ts-ignore
+        onPress={() => navigation.navigate("Gestures")}
+      />
     </View>
   );
 }
