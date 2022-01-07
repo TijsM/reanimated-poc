@@ -21,14 +21,11 @@ export function BofrostScreen() {
   return (
     <View style={styles.screen}>
       <View style={styles.card}>
-        {/* {animation.value < 0 ? ( */}
         <InteractiveComponent animationValue={animation} />
-        {/* ) : ( */}
         <DefaultComponent
           animationValue={animation}
           startAnimation={startAnimation}
         />
-        {/* )}kk */}
       </View>
     </View>
   );
@@ -46,6 +43,7 @@ const DefaultComponent = ({
   const animatedStyles = useAnimatedStyle(() => {
     return {
       opacity: animationValue.value,
+      transform: [{ scale: animationValue.value === 0 ? 0 : 1 }],
     };
   });
   return (
@@ -84,7 +82,7 @@ const InteractiveComponent = ({
     <Animated.View style={[styles.cardContent, animatedStyles]}>
       <TouchableOpacity style={styles.button} onPress={remove} />
       <Text>{amount}</Text>
-      <TouchableOpacity style={styles.button} onPress={add} />
+      <TouchableOpacity style={[styles.button]} onPress={add} />
     </Animated.View>
   );
 };
@@ -113,7 +111,8 @@ const styles = StyleSheet.create({
   button: {
     width: 32,
     height: 32,
-    backgroundColor: "red",
     borderRadius: 32,
+    borderColor: "black",
+    borderWidth: 1,
   },
 });
